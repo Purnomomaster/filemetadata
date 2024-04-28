@@ -14,7 +14,6 @@ app.get('/', function (req, res) {
 // requested API
 const upload = multer({ dest: '/' })
 app.post('/api/fileanalyse', upload.single('upfile'), function (req, res) {
-  console.log(req.file.originalname, req.file.mimetype, req.file.size)
   res.json({ "name": req.file.originalname, "type": req.file.mimetype, "size": req.file.size })
 })
 
